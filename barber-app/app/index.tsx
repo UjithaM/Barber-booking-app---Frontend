@@ -1,18 +1,24 @@
 import {Text, StyleSheet, View, SafeAreaView, Image, TextInput, TouchableOpacity} from "react-native";
 import {useState} from "react";
 import {FontAwesome5, MaterialCommunityIcons} from "@expo/vector-icons";
+import {Link, useRouter} from "expo-router";
 
 export default function Index() {
-
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const router = useRouter();
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
     };
 
     function onPressLogin() {
-        console.log('Login Pressed');
+        router.push("/home")
+    }
+
+    function onForgotPassword(){
+        router.push("/forgotPassword")
     }
 
     return (
@@ -81,9 +87,11 @@ export default function Index() {
                     />
                 </View>
                 <View style={{flexDirection:'row', justifyContent: 'flex-end'}}>
-                    <Text style={{color: '#363062', marginTop: 10, fontWeight:'bold', fontSize: 16}}>
-                        Forgot Password?
-                    </Text>
+                    <TouchableOpacity onPress={onForgotPassword}>
+                        <Text style={{color: '#363062', marginTop: 10, fontWeight:'bold', fontSize: 16}}>
+                            Forgot Password?
+                        </Text>
+                    </TouchableOpacity>
                 </View>
                 {/* Login button moved inside loginForm */}
                 <TouchableOpacity style={styles.loginButton} onPress={onPressLogin}>
