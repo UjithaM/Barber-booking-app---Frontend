@@ -1,10 +1,11 @@
 import {SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
+import {useRouter} from "expo-router";
 
 export  default  function () {
-
+    const router = useRouter();
     function onPressSend() {
-
+        router.push("/authentication")
     }
 
     return (
