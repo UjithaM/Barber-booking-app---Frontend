@@ -6,6 +6,7 @@ export default function RootLayout() {
         <Stack.Screen name="index" />
         <Stack.Screen name="forgotPassword" />
         <Stack.Screen name="authentication" />
+        <Stack.Screen name="register" />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );
