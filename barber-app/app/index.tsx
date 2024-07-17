@@ -21,6 +21,10 @@ export default function Index() {
         router.push("/forgotPassword")
     }
 
+    function onPressSignUp() {
+        router.push("/register")
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <Image
@@ -101,7 +105,7 @@ export default function Index() {
                         <Text style={{color: '#6B7280', fontSize: 16}}>
                             Don't have an account?
                         </Text>
-                        <TouchableOpacity onPress={() => console.log('Sign Up Pressed')}>
+                        <TouchableOpacity onPress={onPressSignUp}>
                             <Text style={{color: '#363062', fontSize: 16, fontWeight: 'bold', marginLeft: 5}}>
                                 Sign Up
                             </Text>
